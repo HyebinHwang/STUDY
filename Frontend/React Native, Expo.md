@@ -4,7 +4,7 @@ React Native는 React와 앱 플랫폼의 기본 기능을 사용하여 Android 
 
 ### 구조
 
-![0E6E5446-FE42-4B35-8527-6B14AECD0D28_1_201_a.jpeg](ReactNative,Expo1.jpeg)
+![0E6E5446-FE42-4B35-8527-6B14AECD0D28_1_201_a.jpeg](../images/ReactNative,Expo1.jpeg)
 
 React를 확인해보면 코드를 작성하면 해당 코드를 JS로 컴파일하고, 브라우저가 실행해주는 단계로 진행됩니다. 하지만 React Native는 브라우저가 없는 등 해당 방식과는 확연한 차이가 있습니다. React Native에서 쉽게 말해 번역기로, 우리의 코드와 운영체제(iOS, Android) 사이에 있습니다. 즉, RN코드를 작성하면, 해당 코드가 iOS 또는 Java 안드로이드 코드로 번역이 되는 방식 입니다.
 
@@ -18,7 +18,7 @@ React를 확인해보면 코드를 작성하면 해당 코드를 JS로 컴파일
 
 ### 동작 방식
 
-![0EAF9B2E-12DF-42E5-A54C-5B3F23957AC8_1_201_a.jpeg](ReactNative,Expo2.jpeg)
+![0EAF9B2E-12DF-42E5-A54C-5B3F23957AC8_1_201_a.jpeg](../images/ReactNative,Expo2.jpeg)
 
 이벤트의 동작 방식은 아래와 같습니다.
 
@@ -61,4 +61,4 @@ Expo는 React Native앱을 직접 Native코드로 컴파일 하지 않고 `Javas
 
 자세한 내용은 [expo.dev](https://expo.dev/) 참고 부탁드립니다.
 
-![F665A0AF-BFEA-4C24-81D1-94545BBF7BB1_1_201_a.jpeg](ReactNative,Expo3.jpeg)
+![F665A0AF-BFEA-4C24-81D1-94545BBF7BB1_1_201_a.jpeg](../images/ReactNative,Expo3.jpeg)
