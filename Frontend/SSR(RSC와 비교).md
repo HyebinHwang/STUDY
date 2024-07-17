@@ -164,3 +164,17 @@ https://d2.naver.com/helloworld/7804182
 https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components
 
 https://tanstack.com/query/latest/docs/framework/react/guides/advanced-ssr
+
+--- 
+
+### 이후 SSR이 일어나지 않던 이슈
+이후 코드를 수정하다보니, 어느 순간인지는 모르겠지만 갑자기 SSR이 동작하지 않았다.
+`Tanstack Query` 공식 문서를 찾아보면 예제에 `prefetchQuery`와 `useSuspense`를 같이 사용한다. 그래서 기존의 `useQuery`를 사용하던 부분을 `useSuspenseQuery`로 변경했더니, 에러가 발생했다.
+왜냐하면 `Suspense`는 SSR환경에서 동작하기 때문에, 클라이언트 방식으로 가져오는 토큰과 `axios` interceptor에서 `React Native`와 통신을 하는 코드가 동작하지 않았다.
+토큰을 props로 전달해서 해당 토큰을 핸들링하려고 했으나, 해당 코드가 props로 토큰을 받는 것이 코드가 좀 더러워지고, 더 올바른 방법이 있을 것 같아서 `Suspense`와 SSR에 대해 개념부터 다시 잡는 것을 시작했다.
+아무리 생각해도 내 방식이면 SSR방식으로 렌더링이 되어야 하는데, 계속 동작하지 않았다. 여러 방법을 찾던 중 범인을 발견했다. 
+범인은 `axios` interceptor였다. SSR렌더링 동안 axios에서 따로 에러는 발생시키지는 않지만 axios interceptor에 
+```jsx
+if(window.ReactNativeWebview...) ... 
+```
+코드가 있는데 여기서 SSR환경에서는 window가 존재하지 않기 때문에 에러가 발생했다. 
