@@ -129,6 +129,9 @@ export default async function ChatRoomPage({ searchParams: { postId }, params: {
 }
 ```
 
+- HydrationBoundary: 이전에 dehydrated된 state를 queryClient안에 추가한다.
+- dehydrate: HydrationBoundary 또는 hydrate와 함께 후에 hydrated될 수 있는 캐시를 생성한다. 기본적으로 성공한 쿼리들만 포함된다.
+
 `HydrationBoundary`를 통해 클라이언트 `queryClient`에 이전에 `dehydrated`되어 있는 `queryClient`를 `hydrate`합니다. 클라이언트에 이미 데이터가 포함되어 있는 경우 업데이트 타임스탬프에 따라 새 쿼리가 지능적으로 병합됩니다. `searchParams`나 `cookie`같은 경우는 `NextJS` 내장 라이브러리를 통해 정보를 가져올 수 있습니다.
 
 ```jsx
