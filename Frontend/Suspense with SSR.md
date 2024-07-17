@@ -15,6 +15,8 @@ React는 `Suspense`를 통해 SSR을 더 작은 독립 단위로 세분화할 �
 
 ### Suspense를 이용한 SSR 문제점 해결
 
+즉, Suspense는 단순한 선언형으로 Loading을 표시할 수 있는 코드가 아닌 SSR의 문제를 해결하기 위해 등장하게 되었습니다.
+
 1. Streaming HTML on the server
 
 오늘날의 SSR은 all or nothing입니다. 위에 예제 코드에서 게시글 정보에 대한 데이터를 서버에서 가져올 때까지 모든 순서는 blocking됩니다.
